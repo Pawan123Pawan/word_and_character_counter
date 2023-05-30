@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0px 300px;
+        }
+        #cantainer {
+            text-align: center;
+            background: rgb(10, 124, 177);
+            color: white;
+            padding:  8px;
+            margin-bottom: 0px;
+        }
+         h1 {
+            margin: 2px;
+        } 
+
+        #textbox {
+            /* margin-bottom: 10px; */
+            width: 99%;
+            font-size: 20px;
+
+        }
+        p{
+            font:bold;
+            font-size: 23px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div id="cantainer">
+        <h1>Word and character counter Project</h1>
+        <textarea id="textbox" cols="30" rows="10"></textarea>
+        <P>
+            <span id="word"> 0</span> Words and <span id="char"> 0 </span> Characters
+        </P>
+
+    </div>
+    <script>
+        let textbox = document.getElementById("textbox");
+
+        textbox.addEventListener("input", function () {
+            let text = this.value;
+            document.getElementById("char").innerHTML = text.length;
+
+
+            text = text.trim();
+            let word = text.split(" ");
+            let cleanList = word.filter(function (elm) {
+                return elm != "";
+
+            });
+            document.getElementById("word").innerHTML = cleanList.length;
+
+
+
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
